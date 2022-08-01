@@ -9,7 +9,7 @@ Return the leftmost pivot index. If no such index exists, return -1. */
 var pivotIndex = function(nums) {
     if (nums.length === 0) return -1;
     if (nums.length === 1) return 0;
-const totalSum = nums.reduce((acc, cur) => acc + cur);
+const totalSum = nums.reduce((acc, cur) => acc + cur, 0);
 let leftSum = 0;
     for (i = 0; i < nums.length; i++) {
         if (leftSum === totalSum - leftSum - nums[i]) {
