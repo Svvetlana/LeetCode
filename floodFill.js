@@ -6,11 +6,11 @@ To perform a flood fill, consider the starting pixel, plus any pixels connected 
 
 Return the modified image after performing the flood fill.*/
 
-var floodFill = function(image, sr, sc, color) {
+var floodFill = function (image, sr, sc, color) {
     const fill = (i, j, val) => {
-        image [i] [j] = color;
+        image[i][j] = color;
         if (i > 0 && val == image[i - 1][j]) fill(i - 1, j, val);
-        if ( j > 0 && val == image[i][j - 1]) fill(i, j - 1, val);
+        if (j > 0 && val == image[i][j - 1]) fill(i, j - 1, val);
         if (i < image.length - 1 && val == image[i + 1][j]) fill(i + 1, j, val);
         if (j < image[0].length - 1 && val == image[i][j + 1]) fill(i, j + 1, val);
     }
